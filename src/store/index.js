@@ -4,7 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-  count: 1,
+  count: 0,
 };
 
 const getters = {
@@ -17,10 +17,13 @@ const getters = {
 };
 
 const mutations = {
-  increment() {
+  increment(state) {
     state.count += 1;
   },
-  decrement() {
+  incrementBy(state, incrVal) {
+    state.count += incrVal;
+  },
+  decrement(state) {
     state.count -= 1;
   },
 };
@@ -31,6 +34,9 @@ const actions = {
   },
   decrement(context, payload) {
     context.commit('decrement');
+  },
+  incrementBy(context, payload) {
+    context.commit('incrementBy', payload);
   },
   incrementIfOdd(context, payload) {
     if ((state.count + 1) % 2 === 0) {

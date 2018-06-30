@@ -9,6 +9,7 @@
         <button class="btn btn-danger" @click="decrement">-</button>
         <button class="btn" @click="incrementIfOdd">Increment if odd</button>
         <button class="btn" @click="incrementAsync">Increment async</button>
+        <button class="btn" @click="incrementBy(2)">Increment by 2</button>
     </div>
     </div>
   </div>
@@ -26,6 +27,7 @@ export default {
   methods: mapActions([
     'increment',
     'decrement',
+    'incrementBy',
     'incrementIfOdd',
     'incrementAsync',
   ])
